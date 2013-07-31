@@ -4,6 +4,8 @@ def evens(array)
   end
 end
 
-evens((1..10).to_a).each do |i|
+list = (1..10).to_a
+
+evens(list).each do |i|
   p i
 end

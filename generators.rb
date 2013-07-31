@@ -1,8 +1,6 @@
 def evens(array)
   Enumerator.new do |y|
-    array.each do |i|
-      y << i if i % 2 == 0
-    end
+    array.each { |i| y << i if i % 2 == 0 }
   end
 end
 

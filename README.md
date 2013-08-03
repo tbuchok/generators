@@ -1,4 +1,6 @@
 # Generators
+
+```js
 // Install nvm: https://github.com/creationix/nvm
 // `$ nvm use 0.11`
 // `$ node --harmony generator.js

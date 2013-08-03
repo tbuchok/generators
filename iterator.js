@@ -19,7 +19,12 @@ function Iterator(generator) {
     while (true) {
       var result = this.g.next();
       if (result.done) break;
-      callback(result.value);
+      try { 
+        callback(result.value);
+      } catch (e) {
+        if (e.message === Iterator.StopIteration) break;
+        else throw e;
+      }
     }
   };
   this.map = function(callback) {
@@ -36,6 +41,8 @@ function Iterator(generator) {
     return value;
   };
 }
+
+Iterator.StopIteration = 'StopIteration';
 
 
 module.exports = Iterator;

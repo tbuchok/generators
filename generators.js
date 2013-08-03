@@ -38,3 +38,13 @@ var reduce = iterator.reduce(function(prev, current) {
 });
 
 console.log(reduce); // 30
+
+
+// === BREAK EARLY
+
+var iterator = new Iterator(evens(list));
+
+iterator.forEach(function(i){
+  if (i === 6) throw new Error(Iterator.StopIteration);
+  console.log(i); // 2, 4, 6, 8, 10
+});
